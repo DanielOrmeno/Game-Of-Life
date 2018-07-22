@@ -170,6 +170,9 @@ export default Vue.extend({
             this.interval = (setInterval(() => {
                 this.cycles += 1;
                 this.setState();
+                if (this.aliveCount === 0) {
+                    this.stop();
+                }
             }, 100)) as any;
         },
         stop() {
